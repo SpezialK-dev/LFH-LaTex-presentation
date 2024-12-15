@@ -1,0 +1,112 @@
+% Slides with Only an Image
+
+
+% 1. Title of page
+% 2. Size of image (width)
+% 3. image path
+% 4. description of image
+\newcommand{\pageWithImageWidth}[4]{
+    \begin{frame}
+      \frametitle{#1}
+      \includegraphics[width=#2]{#3}
+      #4
+     \end{frame}
+   }
+
+
+  
+% 1. Title of page
+% 2. Size of image (width)
+% 3. image path
+% 4. description of image
+\newcommand{\pageWithImageHeight}[4]{
+    \begin{frame}
+      \frametitle{#1}
+      \includegraphics[height=#2]{#3}
+      #4
+     \end{frame}
+   }
+
+
+
+% Slides with Image and Text to the side
+% 1. Frametitle
+% 2. height
+% 3. width
+% 4. image path
+% 5. text afterwards
+   
+\newcommand{\pageWithImageAndTextRight}[5]{
+\begin{frame}
+  \frametitle{#1}
+
+  \begin{tabular}{cl}  
+    \begin{tabular}{c}
+      \includegraphics[height=#2, width=#3]{#4}
+    \end{tabular}
+    & \begin{tabular}{l}
+      \parbox{0.5\linewidth}{%  change the parbox width as appropiate
+      #5
+    }
+
+    \end{tabular}  \\
+    \end{tabular}
+    
+
+\end{frame}
+}
+
+
+% Slides with Image and Text to the side
+% 1. Frametitle
+% 2. height
+% 3. image path
+% 4. text afterwards
+   
+\newcommand{\pageWithImageHightAndTextRight}[4]{
+\begin{frame}
+  \frametitle{#1}
+
+  \begin{tabular}{cl}  
+    \begin{tabular}{c}
+      \includegraphics[height=#2]{#3}
+    \end{tabular}
+    & \begin{tabular}{l}
+      \parbox{0.5\linewidth}{%  change the parbox width as appropiate
+      #4
+    }
+
+    \end{tabular}  \\
+    \end{tabular}
+    
+
+\end{frame}
+}
+
+
+
+% Slides with Image and Text to the side
+% 1. Frametitle
+% 2. width
+% 3. image path
+% 4. text afterwards
+   
+\newcommand{\pageWithImageWidthAndTextRight}[4]{
+\begin{frame}
+  \frametitle{#1}
+
+  \begin{tabular}{cl}  
+    \begin{tabular}{c}
+      \includegraphics[width=#2]{#3}
+    \end{tabular}
+    & \begin{tabular}{l}
+      \parbox{0.5\linewidth}{%  change the parbox width as appropiate
+      #4
+    }
+
+    \end{tabular}  \\
+    \end{tabular}
+    
+
+\end{frame}
+}

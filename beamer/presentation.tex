@@ -1,0 +1,95 @@
+\documentclass[german]{beamer}
+% all of the packages
+\usepackage{import}
+\usepackage{tikz}
+\usepackage{multicol}
+% \usepackage{biblatex}
+
+% setting the settings for biber as a backend
+\usepackage[
+    backend=biber,
+    hyperref=true,
+    url=false,
+    style=ext-authoryear,
+    autocite=footnote,
+    maxbibnames=99,
+    time=24h,
+    sorting=ynt]{biblatex}
+\bibliography{./beamer/sources.bib}
+
+
+
+
+% some stling information 
+\usetheme{Boadilla}
+% setting all of the default things
+\usefonttheme{professionalfonts}
+% doing all of the color things 
+\usecolortheme{lily}
+
+% Including a bunch of other Tex things
+\import{}{./beamer/presets.tex}
+\import{}{./beamer/info.tex}
+
+
+
+% doing the logo stuff for the presentation
+% URL :https://leibniz-fh.de/content/uploads/2021/03/Symbolbild_Logo-L-FH.jpg
+\logo{
+  \begin{tikzpicture}[overlay,remember picture]
+    \node[left=0.2cm] at (current page.30){
+      \includegraphics[width=1cm]{beamer/img/Symbolbild_Logo-L-FH.jpg}
+    };
+  \end{tikzpicture}
+}
+
+% simply changing it for the start page
+% url: https://www.mystipendium.de/hochschulen/leibniz-fh
+\titlegraphic{
+  \begin{tikzpicture}[overlay,remember picture]
+    \node[left=1] at (current page.30){
+      \includegraphics[width=4cm]{beamer/img/logo-fh-leibniz-3029039491.jpg}
+    };
+  \end{tikzpicture}
+}
+
+
+\begin{document}
+\title{\workingTitle}
+
+% new titlepage 
+\newcommand{\titleOnPage}[1]{
+  \textbf{
+  \begin{large}
+      #1
+    \end{large}
+  }
+}
+
+\begin{frame}
+  \titlepage
+\end{frame}
+
+\begin{frame}
+  \frametitle{Inhaltsverzeichniss}
+  \tableofcontents
+\end{frame}
+
+% including all other slides
+\import{}{./beamer/slides.tex}
+
+
+
+\section{Quellen}
+\begin{frame}
+\frametitle{Quellen}  
+
+% Important that things are included you must also cite them 
+\printbibliography
+
+
+
+\end{frame}
+
+
+\end{document}

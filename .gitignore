@@ -1,0 +1,10 @@
+presentation.pdf
+beamer/auto/*
+presentation.bbl
+presentation.bcf
+presentation.blg
+presentation.fdb_latexmk
+presentation.fls
+presentation.run.xml
+
+*.*~
