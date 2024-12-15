@@ -9,7 +9,7 @@
     \begin{frame}
       \frametitle{#1}
       \includegraphics[width=#2]{#3}
-      #4
+     {\footnotesize #4 }
      \end{frame}
    }
 
@@ -23,7 +23,7 @@
     \begin{frame}
       \frametitle{#1}
       \includegraphics[height=#2]{#3}
-      #4
+      {\footnotesize #4}
      \end{frame}
    }
 
@@ -35,14 +35,16 @@
 % 3. width
 % 4. image path
 % 5. text afterwards
+% 6. image description
    
-\newcommand{\pageWithImageAndTextRight}[5]{
+\newcommand{\pageWithImageAndTextRight}[6]{
 \begin{frame}
   \frametitle{#1}
 
   \begin{tabular}{cl}  
     \begin{tabular}{c}
-      \includegraphics[height=#2, width=#3]{#4}
+      \includegraphics[height=#2, width=#3]{#4}\\
+      {\footnotesize #6}
     \end{tabular}
     & \begin{tabular}{l}
       \parbox{0.5\linewidth}{%  change the parbox width as appropiate
@@ -62,14 +64,15 @@
 % 2. height
 % 3. image path
 % 4. text afterwards
-   
-\newcommand{\pageWithImageHightAndTextRight}[4]{
+% 5. Image description   
+\newcommand{\pageWithImageHightAndTextRight}[5]{
 \begin{frame}
   \frametitle{#1}
 
   \begin{tabular}{cl}  
     \begin{tabular}{c}
-      \includegraphics[height=#2]{#3}
+      \includegraphics[height=#2]{#3}\\
+      { \footnotesize  #5}
     \end{tabular}
     & \begin{tabular}{l}
       \parbox{0.5\linewidth}{%  change the parbox width as appropiate
@@ -90,14 +93,16 @@
 % 2. width
 % 3. image path
 % 4. text afterwards
-   
-\newcommand{\pageWithImageWidthAndTextRight}[4]{
+%. Image Desription
+\newcommand{\pageWithImageWidthAndTextRight}[5]{
 \begin{frame}
   \frametitle{#1}
 
   \begin{tabular}{cl}  
     \begin{tabular}{c}
-      \includegraphics[width=#2]{#3}
+      \includegraphics[width=#2]{#3}\\
+      { \footnotesize #5}
+ 
     \end{tabular}
     & \begin{tabular}{l}
       \parbox{0.5\linewidth}{%  change the parbox width as appropiate
@@ -110,3 +115,4 @@
 
 \end{frame}
 }
+
