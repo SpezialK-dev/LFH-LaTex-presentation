@@ -4,7 +4,22 @@ This is an unoffocial LaTex template for presentations at the LFH Fachhochschule
 
 This is in no way affiliated with the LFH 
 
+
 # Usage 
+
+## required tools 
+
+- make (optional you could also run the command yourself but if you want to chain it with other things make is usefull)
+- Latexmk
+- some sort of Tex compiler
+- biber aswell as biblatex
+
+all of the latex things should come with a standart Tex Live installation except biber that has to be installed seperatly. There is a seperate AUR package. 
+
+## makefile
+this can be customized with other functions that then need to be added the all call. This is helpfull if you want to also create images or do run some other code before generatng your presentation. 
+
+this should be enought to compile if everything is installed correctly this also gives the benefit of being somewhat more stable than just running a command. Also it makes no assumption about your enviroment. since all the paths will work if you use the Makefile.  
 
 ## info.tex
 info contains all of your personal information like title of the presentation aswell as name, and so on. This can and should be custinuzed per Projekt
