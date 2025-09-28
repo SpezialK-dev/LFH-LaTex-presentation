@@ -20,19 +20,24 @@
 
 
 
-% some stling information 
+% some stling information
 \usetheme{Boadilla}
 % setting all of the default things
 \usefonttheme{professionalfonts}
-% doing all of the color things 
+% doing all of the color things
 \usecolortheme{lily}
 
 % Including a bunch of other Tex things
 \import{}{./beamer/presets.tex}
 \import{}{./beamer/info.tex}
 
+\def\True{1}
+\def\False{0}
+
+\begin{document}
 
 
+\if\Logo\True
 % doing the logo stuff for the presentation
 % URL :https://leibniz-fh.de/content/uploads/2021/03/Symbolbild_Logo-L-FH.jpg
 \logo{
@@ -52,12 +57,11 @@
     };
   \end{tikzpicture}
 }
+\fi
 
-
-\begin{document}
 \title{\workingTitle}
 
-% new titlepage 
+% new titlepage
 \newcommand{\titleOnPage}[1]{
   \textbf{
   \begin{large}
@@ -82,9 +86,9 @@
 
 \section{Quellen}
 \begin{frame}
-\frametitle{Quellen}  
+\frametitle{Quellen}
 
-% Important that things are included you must also cite them 
+% Important that things are included you must also cite them
 \printbibliography
 
 
