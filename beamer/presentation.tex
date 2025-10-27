@@ -15,10 +15,7 @@
     maxbibnames=99,
     time=24h,
     sorting=ynt]{biblatex}
-\bibliography{./beamer/sources.bib}
-
-
-
+\bibliography{sources.bib}
 
 % some stling information
 \usetheme{Boadilla}
@@ -36,75 +33,69 @@
 \setbeamercolor{block title example}{bg=green!20}
 
 % Including a bunch of other Tex things
-\import{}{./beamer/presets.tex}
-\import{}{./beamer/info.tex}
+\import{}{presets.tex}
+\import{}{info.tex}
 
 \def\True{1}
 \def\False{0}
 
 \begin{document}
 
-% removing navigation symbols
-% TODO : add a toggle fir this in the future maybe.
-\setbeamertemplate{navigation symbols}{}
+  % removing navigation symbols
+  % TODO : add a toggle fir this in the future maybe.
+  \setbeamertemplate{navigation symbols}{}
 
-\if\Logo\True
-% doing the logo stuff for the presentation
-% URL :https://leibniz-fh.de/content/uploads/2021/03/Symbolbild_Logo-L-FH.jpg
-\logo{
-  \begin{tikzpicture}[overlay,remember picture]
-    \node[left=0.2cm] at (current page.30){
-      \includegraphics[width=1cm]{beamer/img/Symbolbild_Logo-L-FH.jpg}
-    };
-  \end{tikzpicture}
-}
-
-% simply changing it for the start page
-% url: https://www.mystipendium.de/hochschulen/leibniz-fh
-\titlegraphic{
-  \begin{tikzpicture}[overlay,remember picture]
-    \node[left=1] at (current page.30){
-      \includegraphics[width=2cm]{beamer/img/Symbolbild_Logo-L-FH.jpg}
-    };
-  \end{tikzpicture}
-}
-\fi
-
-\title{\workingTitle}
-
-% new titlepage
-\newcommand{\titleOnPage}[1]{
-  \textbf{
-  \begin{large}
-      #1
-    \end{large}
+  \if\Logo\True
+  % doing the logo stuff for the presentation
+  % URL :https://leibniz-fh.de/content/uploads/2021/03/Symbolbild_Logo-L-FH.jpg
+  \logo{
+    \begin{tikzpicture}[overlay,remember picture]
+      \node[left=0.2cm] at (current page.30){
+        \includegraphics[width=1cm]{img/Symbolbild_Logo-L-FH.jpg}
+      };
+    \end{tikzpicture}
   }
-}
 
-\begin{frame}
-  \titlepage
-\end{frame}
+  % simply changing it for the start page
+  % url: https://www.mystipendium.de/hochschulen/leibniz-fh
+  \titlegraphic{
+    \begin{tikzpicture}[overlay,remember picture]
+      \node[left=1] at (current page.30){
+        \includegraphics[width=2cm]{img/Symbolbild_Logo-L-FH.jpg}
+      };
+    \end{tikzpicture}
+  }
+  \fi
 
-\begin{frame}
-  \frametitle{Inhaltsverzeichnis}
-  \tableofcontents
-\end{frame}
+  \title{\workingTitle}
 
-% including all other slides
-\import{}{./beamer/slides.tex}
+  % new titlepage
+  \newcommand{\titleOnPage}[1]{
+    \textbf{
+    \begin{large}
+        #1
+      \end{large}
+    }
+  }
 
+  \begin{frame}
+    \titlepage
+  \end{frame}
 
+  \begin{frame}
+    \frametitle{Inhaltsverzeichnis}
+    \tableofcontents
+  \end{frame}
 
-\section{Quellen}
-\begin{frame}
-\frametitle{Quellen}
+  % including all other slides
+  \import{}{slides.tex}
 
-% Important that things are included you must also cite them
-\printbibliography
+  \section{Quellen}
+  \begin{frame}
+    \frametitle{Quellen}
 
-
-
-\end{frame}
-
+    % Important that things are included you must also cite them
+    \printbibliography
+  \end{frame}
 
 \end{document}

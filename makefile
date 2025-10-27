@@ -6,4 +6,4 @@ TEXFILES = beamer/presentation.tex
 
 
 compile_tex:
-	latexmk -pdf $(TEXFILES)
+	latexmk -pdf -gg -cd $(TEXFILES)
