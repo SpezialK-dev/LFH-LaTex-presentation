@@ -1,9 +1,12 @@
-# compiles everything 
-all: compile_tex  
+# compiles everything
+all: compile_tex
 
 # TEX Stuff
-TEXFILES = beamer/presentation.tex 
+TEXFILES = beamer/presentation.tex
 
 
 compile_tex:
 	latexmk -pdf $(TEXFILES)
+
+clean:
+	latexmk -C $(TEXFILES)
