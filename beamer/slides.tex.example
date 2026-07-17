@@ -1,0 +1,11 @@
+% put all of your slides that you want to create in here 
+\begin{frame}
+    \frametitle{Test}
+    \begin{itemize}
+        \item abc
+        \pause
+        \item def
+        \pause
+        \item xyz
+    \end{itemize}
+\end{frame}

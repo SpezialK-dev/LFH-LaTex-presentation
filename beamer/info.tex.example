@@ -1,0 +1,40 @@
+\def\Date{\today}
+\def\Author{Your Name} %Your full name
+\def\MatrNumber{007} %z.b your StudentID
+\def\Contact{some-email@example.com} %z.B. your Student Email
+
+% institue may be overwritten by style
+\def\Institute{Some Institute}
+% The Title of your work
+\def\PresentationTitle{The Title}
+
+
+% all of the more general information
+\def\Company{Company} %z.B. the company you work for
+\def\FieldOfStudy{IT-Security} %field of study
+\def\Supervisor{} %z.B. Prof. Dr. Mustermann
+\def\Occasion{Big Data Analytics WI-Sem 25} % The Module or Congress this presentation is for
+
+
+% Available Styles are:
+% "default"
+% "lfh"
+\def\BeamerStyle{default}
+
+% Show Logo on every slide
+\def\Logo{\True}
+
+% Notes Options
+
+% Use PDFPC Notes instead of beamer
+\def\UsePDFPC{\True}
+% Where to show default beamer notes
+% This option is ignored if UsePDFPC is True
+% Available Options are (default none):
+% "none" - notes are hidden
+% "slides" - notes are on following slide
+% "right" - notes are on the right of each slide
+% "left" - notes are on the left of each slide
+% "top" - notes are on the above each slide
+% "bottom" - notes are on the below each slide
+\def\BeamerNotesLocation{slides}

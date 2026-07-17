@@ -1,0 +1,74 @@
+
+% set the babel language
+\def\Language{american}
+
+% some stling information
+\usetheme{Boadilla}
+% setting all of the default things
+\usefonttheme{professionalfonts}
+% doing all of the color things
+\usecolortheme{lily}
+
+% setting the colors for blocks
+\setbeamercolor{block body alerted}{bg=alerted text.fg!10}
+\setbeamercolor{block title alerted}{bg=alerted text.fg!20}
+\setbeamercolor{block body}{bg=structure!10}
+\setbeamercolor{block title}{bg=structure!20}
+\setbeamercolor{block body example}{bg=green!10}
+\setbeamercolor{block title example}{bg=green!20}
+% removing navigation symbols
+% TODO : add a toggle for this in the future maybe.
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{itemize items}[circle]
+\setbeamertemplate{enumerate items}[circle]
+\setbeamertemplate{sections/subsections in toc}[circle]
+
+\if\Logo\True
+  % doing the logo stuff for the presentation
+  \logo{
+    \begin{tikzpicture}[overlay,remember picture]
+      \node[anchor=north east] at (current page.north east) {
+        \includegraphics[width=0.8cm]{styles/img/Default_Logo_transparent.png}
+      };
+    \end{tikzpicture}
+  }
+
+  % simply changing it for the start page
+  \titlegraphic{
+    \begin{tikzpicture}[overlay,remember picture]
+      \node[xshift=0.15cm, yshift=0.15cm, anchor=north east] at (current page.north east) {
+        \includegraphics[width=1.5cm]{styles/img/Default_Logo.png}
+      };
+    \end{tikzpicture}
+  }
+\fi
+
+% set default latex vars, that are used in info
+\date{\Date}
+\institute{\Institute}
+
+% Custom Titlepage
+\ifthenelse{\equal{\Company}{}}{
+  \author{\Author}
+}{
+  \author{\Author\space (\Company)}
+}
+
+\ifthenelse{\equal{\Supervisor}{}}{}{
+  \subtitle{%
+    supervised by \Supervisor
+  }
+}
+
+\addtobeamertemplate{institute}{}{%
+  \ifthenelse{\equal{\MatrNumber}{}}{}{%
+    \textit{\tiny Student ID: \MatrNumber}%
+  }
+}
+
+\addtobeamertemplate{author}{}{%
+  \ifthenelse{\equal{\Contact}{}}{}{%
+    \vspace{-0.4cm}%
+    \textit{\scriptsize Contact: \Contact}%
+  }
+}

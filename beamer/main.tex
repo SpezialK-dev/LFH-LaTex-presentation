@@ -1,0 +1,83 @@
+
+% mandatory packages
+\usepackage{import}
+\usepackage{ifthen}
+\usepackage{tikz}
+\usetikzlibrary{positioning}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{fancyvrb}
+\usepackage{multicol}
+\usepackage{csquotes}
+
+\def\True{1}
+\def\False{0}
+
+% Including a bunch of other Tex things
+\import{}{presets.tex}
+\import{}{info.tex}
+\import{./styles/}{style.tex}
+\usepackage[\Language]{babel}
+\setbeameroption{hide notes}
+
+% when pdfpc feature is enabled, notes are made for pdfpc per default
+\if\UsePDFPC\True
+  \usepackage[overridenote]{pdfpc}
+  \renewcommand{\note}{\pdfpcnote}
+\else
+  \ifthenelse{\equal{\BeamerNotesLocation}{right}}{%
+    \setbeameroption{show notes on second screen=right}%
+  }{%
+  \ifthenelse{\equal{\BeamerNotesLocation}{left}}{%
+    \setbeameroption{show notes on second screen=left}%
+  }{%
+  \ifthenelse{\equal{\BeamerNotesLocation}{top}}{%
+    \setbeameroption{show notes on second screen=top}%
+  }{%
+  \ifthenelse{\equal{\BeamerNotesLocation}{bottom}}{%
+    \setbeameroption{show notes on second screen=bottom}%
+  }{%
+  \ifthenelse{\equal{\BeamerNotesLocation}{slides}}{%
+    \setbeameroption{show notes}%
+  }{%
+  \ifthenelse{\equal{\BeamerNotesLocation}{none}}{%
+    \setbeameroption{hide notes}%
+  }{}}}}}}%
+\fi
+
+% setting the settings for biber as a backend
+\usepackage[
+    backend=biber,
+    hyperref=true,
+    url=false,
+    style=ext-authoryear,
+    autocite=footnote,
+    maxbibnames=99,
+    time=24h,
+    sorting=ynt]{biblatex}
+\bibliography{sources.bib}
+
+\begin{document}
+
+  \title{\PresentationTitle}
+
+  \begin{frame}
+    \titlepage
+  \end{frame}
+
+  \begin{frame}
+    \frametitle{\contentsname}
+    \tableofcontents
+  \end{frame}
+
+  % including all other slides
+  \import{}{slides.tex}
+
+  \section{\bibname}
+  \begin{frame}[allowframebreaks]{\bibname}
+
+    % Important that things are included you must also cite them
+    \printbibliography
+  \end{frame}
+
+\end{document}

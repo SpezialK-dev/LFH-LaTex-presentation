@@ -1,6 +1,12 @@
 beamer/auto/*
 presentation.*
 !presentation.tex
+handout.*
+!handout.tex
+%OUTDIR%
 *-SAVE-ERROR
+style_custom.tex
+slides.tex
+info.tex
 
 *.*~
